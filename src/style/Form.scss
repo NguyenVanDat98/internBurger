@@ -1,0 +1,47 @@
+.form{
+    margin-top: 40px;
+    border-radius: 15px;
+    background-color: rgba(51, 51, 51, 0.24);
+    padding: 20px;
+    box-shadow: 3px 10px 10px black;
+}
+.formOrder{
+    display: flex;
+    flex-direction: column;
+    input,textarea{
+        margin-top: 10px;
+        height: 24px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        padding: 0 15px;
+    }
+    label{
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    button{
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 100px;
+        border-radius: 5px;
+        padding: 8px;
+        font-size: 18px;
+        border: none;
+        background-color: rgb(37, 117, 192);
+    }
+    .bill{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+        h4{
+            text-transform: capitalize;
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

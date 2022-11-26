@@ -1,0 +1,51 @@
+.preview{
+    padding: 3px 36px;
+}
+.ingredient{
+    text-align: center;
+    text-transform: capitalize;
+    margin: 6px 0;    
+    padding: 3px;
+    min-height: 30px;
+    
+}
+
+.cakeCrust{
+    height: 40px;
+    background-color: rgb(240, 148, 9);
+    border-radius: 32px 32px 5px 5px;
+    padding: 8px 20px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 6px;
+    
+}
+.cakeCrust.down{
+    border-radius:  5px 5px 32px 32px;
+    margin-bottom: 0;
+    margin-top: 6px;
+}
+.salad{
+    background-color: green;
+    border-radius: 16px;
+    padding: 3px;
+    margin: 0 -8px;
+}
+.bacon{
+    background-color: rgb(230, 181, 92);
+    border-radius: 8px;
+
+    
+}
+.cheese{
+    background-color: yellow;
+    border-radius: 70% 70% 30% 30%;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+.meat{
+    background-color: rgb(68, 39, 0);
+    border-radius: 30px;
+    margin-left: 0;
+     margin-right: 0;
+}
