@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { addOrder } from "../apiMethod/apiMethod";
 
 function OrderPage(props) {
-  const {} = props;
   const navi = useNavigate();
   const [formuser, setForm] = useState({});
   const dataUser = useSelector((_) => _.user);

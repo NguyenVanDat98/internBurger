@@ -1,22 +1,24 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
 import { Button, Col, Divider, Form, Input, Row } from "antd";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../firebaseCfg';
 import { AddUser } from '../apiMethod/apiMethod';
+import { auth } from '../firebaseCfg';
 import { setUser } from '../redux/actionUser';
 
 
 function SignUp(props) {
-    const {} = props
     const navi = useNavigate()
     const dispatch = useDispatch()
     const onFinish = async (values) => {
 
         try {
-            const user = await createUserWithEmailAndPassword(auth, values.email,values.password)
+          //create account user
+            await createUserWithEmailAndPassword(auth, values.email,values.password)
           const {email,address,userName,telephone,password}= values
+
+          //add user to server
             AddUser("addUser",JSON.stringify({
               userName : userName,
               email : email,
@@ -25,6 +27,7 @@ function SignUp(props) {
               telephone : telephone
             } )).then(res => {
               res.status===200&& navi("/") 
+              //save imformation user to redux
               dispatch(setUser(values)) 
           })
         } catch (error) {

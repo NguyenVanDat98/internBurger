@@ -45,7 +45,6 @@ function AdminPage(props) {
   const [loading, setLoading] = useState(false);
   const start = () => {
     setLoading(true);
-    // ajax request after empty completing
     setTimeout(() => {
       setSelectedRowKeys([]);
       setLoading(false);

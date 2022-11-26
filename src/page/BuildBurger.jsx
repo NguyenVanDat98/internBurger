@@ -12,7 +12,6 @@ import Option from "../components/Option";
 import PreviewProduct from "../components/PreviewProduct";
 
 function BuildBurger(props) {
-  const {} = props;
   const navi = useNavigate();
 
   const dispatch = useDispatch();

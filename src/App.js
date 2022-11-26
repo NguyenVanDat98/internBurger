@@ -16,11 +16,11 @@ function App() {
     <div className="App">
       <Header/>
       <Routes>
-        <Route path="/" element={<BuildBurger/>}> </Route>
-        <Route path="/login" element={<LoginPage/>}> </Route>
-        <Route path="/signUp" element={<SignUp/>}> </Route>
-        <Route path="/order" element={<OrderPage/>}> </Route>
-        <Route path="/orders" element={<AdminPage/>}> </Route>
+        <Route path="/internBurger/" element={<BuildBurger/>}> </Route>
+        <Route path="/internBurger/login" element={<LoginPage/>}> </Route>
+        <Route path="/internBurger/signUp" element={<SignUp/>}> </Route>
+        <Route path="/internBurger/order" element={<OrderPage/>}> </Route>
+        <Route path="/internBurger/orders" element={<AdminPage/>}> </Route>
       </Routes>
 
       

@@ -8,7 +8,6 @@ import { auth } from '../firebaseCfg';
 import { setUser } from "../redux/actionUser";
 
 function LoginPage(props) {
-  const {} = props;
   const [inputEmail, setEmail]=useState("")
   const navi = useNavigate()
   const param = useLocation()
@@ -16,8 +15,8 @@ function LoginPage(props) {
   const onFinish = async (values) => {
     try {
       const signIn = await signInWithEmailAndPassword(auth, values.email,values.password)
-      await getUserEmail(values.email).then(_=>{dispatch(setUser(_[0]))})
       signIn && navi("/")
+      await getUserEmail(values.email).then(_=>{dispatch(setUser(_[0]))})
     } catch (error) {
             console.log(error.message);
     }
