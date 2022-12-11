@@ -16,7 +16,7 @@ function SignUp(props) {
         try {
           //create account user
             await createUserWithEmailAndPassword(auth, values.email,values.password)
-          const {email,address,userName,telephone,password}= values
+          const {email,address,userName,telephone,password} = values 
 
           //add user to server
             AddUser("addUser",JSON.stringify({
@@ -26,7 +26,7 @@ function SignUp(props) {
               password : password,
               telephone : telephone
             } )).then(res => {
-              res.status===200&& navi("/") 
+              res.status===200&& navi("/internBurger/") 
               //save imformation user to redux
               dispatch(setUser(values)) 
           })

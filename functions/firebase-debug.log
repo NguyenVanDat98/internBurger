@@ -1,0 +1,289 @@
+[debug] [2022-12-11T08:39:56.553Z] ----------------------------------------------------------------------
+[debug] [2022-12-11T08:39:56.555Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2022-12-11T08:39:56.556Z] CLI Version:   11.16.1
+[debug] [2022-12-11T08:39:56.556Z] Platform:      win32
+[debug] [2022-12-11T08:39:56.556Z] Node Version:  v16.16.0
+[debug] [2022-12-11T08:39:56.557Z] Time:          Sun Dec 11 2022 15:39:56 GMT+0700 (Indochina Time)
+[debug] [2022-12-11T08:39:56.557Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-11T08:39:56.674Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2022-12-11T08:39:56.675Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"deploy"}
+[debug] [2022-12-11T08:39:56.675Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2022-12-11T08:39:56.681Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-11T08:39:56.682Z] > authorizing via signed-in user (shynend@gmail.com)
+[debug] [2022-12-11T08:39:56.682Z] [iam] checking project internburger-6dd37 for permissions ["firebase.projects.get"]
+[debug] [2022-12-11T08:39:56.684Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/internburger-6dd37:testIamPermissions [none]
+[debug] [2022-12-11T08:39:56.684Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/internburger-6dd37:testIamPermissions x-goog-quota-user=projects/internburger-6dd37
+[debug] [2022-12-11T08:39:56.684Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/internburger-6dd37:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-12-11T08:39:57.651Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/internburger-6dd37:testIamPermissions 200
+[debug] [2022-12-11T08:39:57.652Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/internburger-6dd37:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-12-11T08:39:57.653Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/internburger-6dd37 [none]
+[debug] [2022-12-11T08:39:58.069Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/internburger-6dd37 200
+[debug] [2022-12-11T08:39:58.070Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/internburger-6dd37 {"projectId":"internburger-6dd37","projectNumber":"650154867699","displayName":"internBurger","name":"projects/internburger-6dd37","resources":{"hostingSite":"internburger-6dd37","realtimeDatabaseInstance":"internburger-6dd37-default-rtdb"},"state":"ACTIVE","etag":"1_0fb9e23d-6391-43a2-8d88-d9a84415b39e"}
+[info] 
+[info] === Serving from 'F:\internShipProject\demo'...
+[info] 
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-12-11T08:39:58.152Z] defaultcredentials: writing to file C:\Users\ASUS\AppData\Roaming\firebase\shynend_gmail_com_application_default_credentials.json
+[debug] [2022-12-11T08:39:58.155Z] Setting GAC to C:\Users\ASUS\AppData\Roaming\firebase\shynend_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ASUS\\AppData\\Roaming\\firebase\\shynend_gmail_com_application_default_credentials.json"}}
+[debug] [2022-12-11T08:39:58.156Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/internburger-6dd37/adminSdkConfig [none]
+[debug] [2022-12-11T08:39:58.520Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/internburger-6dd37/adminSdkConfig 200
+[debug] [2022-12-11T08:39:58.520Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/internburger-6dd37/adminSdkConfig {"projectId":"internburger-6dd37","databaseURL":"https://internburger-6dd37-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"internburger-6dd37.appspot.com"}
+[info] i  functions: Watching "F:\internShipProject\demo\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"F:\\internShipProject\\demo\\functions\" for Cloud Functions..."}}
+[debug] [2022-12-11T08:39:58.567Z] Validating nodejs source
+[debug] [2022-12-11T08:40:02.406Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fcm-node": "^1.6.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.1.0",
+    "web-push": "^3.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-12-11T08:40:02.407Z] Building nodejs source
+[debug] [2022-12-11T08:40:02.407Z] Analyzing nodejs backend spec
+[debug] [2022-12-11T08:40:02.408Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-12-11T08:40:03.673Z] Serving at port 9005
+
+[debug] [2022-12-11T08:40:07.147Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-12-11T08:40:07.154Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
+[info] +  functions[us-central1-app]: http function initialized (http://localhost:5000/internburger-6dd37/us-central1/app). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5000/internburger-6dd37/us-central1/app)."}}
+[debug] [2022-12-11T08:40:11.747Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:40:11.747Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:40:11.748Z] Accepted request GET /internburger-6dd37/us-central1/app --> us-central1-app
+[debug] [2022-12-11T08:40:11.751Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:40:11.752Z] [functions] Got req.url=/internburger-6dd37/us-central1/app, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app, mapping to path=/"}}
+[debug] [2022-12-11T08:40:11.776Z] [worker-pool] addWorker(us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-app)"}}
+[debug] [2022-12-11T08:40:11.776Z] [worker-pool] Adding worker with key us-central1-app, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-app, total=1"}}
+[debug] [2022-12-11T08:40:13.492Z] [runtime-status] [28712] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"F:\\internShipProject\\demo\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"F:\\\\internShipProject\\\\demo\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-11T08:40:13.493Z] [runtime-status] [28712] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.1.0","resolution":"F:\\internShipProject\\demo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.1.0\",\"resolution\":\"F:\\\\internShipProject\\\\demo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2022-12-11T08:40:13.495Z] [runtime-status] [28712] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-12-11T08:40:13.498Z] [runtime-status] [28712] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.1.0","resolution":"F:\\internShipProject\\demo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.1.0\",\"resolution\":\"F:\\\\internShipProject\\\\demo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2022-12-11T08:40:13.789Z] [runtime-status] [28712] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-12-11T08:40:13.790Z] [runtime-status] [28712] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.1.0","resolution":"F:\\internShipProject\\demo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.1.0\",\"resolution\":\"F:\\\\internShipProject\\\\demo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}}"}}
+[debug] [2022-12-11T08:40:13.790Z] [runtime-status] [28712] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.1.0","resolution":"F:\\internShipProject\\demo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.1.0\",\"resolution\":\"F:\\\\internShipProject\\\\demo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2022-12-11T08:40:13.792Z] [runtime-status] [28712] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"F:\\internShipProject\\demo\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"F:\\\\internShipProject\\\\demo\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-11T08:40:13.795Z] [runtime-status] [28712] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.1.0","resolution":"F:\\internShipProject\\demo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.1.0\",\"resolution\":\"F:\\\\internShipProject\\\\demo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2022-12-11T08:40:13.795Z] [runtime-status] [28712] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"F:\\internShipProject\\demo\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"F:\\\\internShipProject\\\\demo\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2022-12-11T08:40:14.054Z] [runtime-status] [28712] initializeApp(DEFAULT) {"credential":{"implicit":false,"projectId":"internburger-6dd37","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC5jYMRtq0Bx/uA\nh+HuVuxSHpuBOJmhbXXd5mPPh44/tXpZGkYtd7OkPaFkALDE6wXz24/wVg+JnIqu\n4nLM14SDpLsijPoHmLkYxB2G2Hn1xapt/ALlTSR2igZedZl42MNvRrF84iY2B3IZ\n0JjipY1D7ihOCXMecMg5VZw7MGy6ZCDkUbkZgBPLR8wcg/bpR37/BGs3mWxx0BZa\nP7uD1tk64vSmWBiRVcHYhb7A+ffL8FjJY6gd1A2DjGM5TcQPE/WoZJP+BxFqJjvz\n1/iCak+M/AmekYAAHdUR+Q1YRtkx9plTN8zTpnsAkRyTkQ/+r99ZdDyky/0aONur\nGsWg0WJbAgMBAAECggEANzBAZjHbtlZpVxrTV6Tx6CDjZqVTiIB6mLPwRucOJ6PO\nDpdyfQ6H11dfW9OawA8ZN6U75CNsvqTZWNfQhl2ps8/4uveMXFsP3q5iC9vyNmgC\n33Cf2dy+diVqbIj0y01Jn5y6qKbI77P6O3RgLLVJ1YUN5twHqeuomej9LVujUzJ4\nMaKBSRBlxudSMroAkho4Q3bQWhhTHsu3JLhoG5icbMg5sk+t9xBjlRkohQE6uDf5\n0owc8vstzuq8jLgGEvyrciSnoiL5O8zbz0LgMUOCsoYU8IagKH6VeA/AeSxppoAQ\nNKH6it6nrG/9SjrtpMEkNMmHg7zAXVTkyXWphirczQKBgQDaXClOMne/uKZODY+w\n8msNK1WfEZTQK5o1GNU7InR7+Z5/ZeSQOI7Nk3mM1WFwUMYeLCNSN3ahFO/yzSWi\nGhgZCUNu3/5jAhDIoHct6gmLBHuI7hKn3eQX67P9WC71RnbVe0mqN9W0CGUxV95j\nzHpFvlUIHb3HSAE5CRxBDbKOzwKBgQDZiaBOOaALvnVgYGrKW/oP2AQI4ms3voG2\nTdbke2eoHayf7YQznvaUe4PAho7zvuxlpSOAZCqt7tSanRjNYp33anhpbsTqVis3\nqOSSMv4/xMeqbO47SBlCw+zQKRwnhJc0hjTDd34wLBJxpjFRe3nfr5mhIta1L7dV\nvv48WBF2tQKBgQC6wQXmxk0aoR9DNGAHs12RdtWU5WGEJTaPYPzFxbMgcR540TmJ\ni4W/FvlnVPwwJjU7iv5ui9ce75xE6eXc3Tps9zpAMr0MCrE2Fd+4WijtR9ksBIna\nHnG9b66R6ADJcAmkjfwz4+sXPfLmH8OpUTHmQmHRPjaYoOHC2SLcFI35iwKBgQCa\nj3Jaog7YyUXUaCz4Akm1oCGdvmG3hZ/by4p3ZEbN5+eS6csYckV4UhnWXMSM4oZL\n4f1LZ9/7HMnp4NyScRMTi45qOs2mQfsK3PEp/xkubb3/lM3fSObJzTMg41Shr09P\nfltW1jvONkIUhaRc5II/MCDToFE1AuYcAkvYzCn8UQKBgDBLGa4DYVTI45BQTTY6\nE6fRBa3XUpzPfDIcFludlVxyGngwb8R6nr+NLeGtj0WuSdllMP4u5NubPKiPQOQU\nhSvw7Chb6ZwU2feEeL5mNckmIUlb+cFQNhXCbZwCddYy4lNLH4OIjWpf5rStWe6s\nqmOYvNWmmddIhbmVinuJFeyh\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-ofvjh@internburger-6dd37.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}},"databaseURL":"https://internburger-6dd37.firebaseio.com"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] initializeApp(DEFAULT) {\"credential\":{\"implicit\":false,\"projectId\":\"internburger-6dd37\",\"privateKey\":\"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC5jYMRtq0Bx/uA\\nh+HuVuxSHpuBOJmhbXXd5mPPh44/tXpZGkYtd7OkPaFkALDE6wXz24/wVg+JnIqu\\n4nLM14SDpLsijPoHmLkYxB2G2Hn1xapt/ALlTSR2igZedZl42MNvRrF84iY2B3IZ\\n0JjipY1D7ihOCXMecMg5VZw7MGy6ZCDkUbkZgBPLR8wcg/bpR37/BGs3mWxx0BZa\\nP7uD1tk64vSmWBiRVcHYhb7A+ffL8FjJY6gd1A2DjGM5TcQPE/WoZJP+BxFqJjvz\\n1/iCak+M/AmekYAAHdUR+Q1YRtkx9plTN8zTpnsAkRyTkQ/+r99ZdDyky/0aONur\\nGsWg0WJbAgMBAAECggEANzBAZjHbtlZpVxrTV6Tx6CDjZqVTiIB6mLPwRucOJ6PO\\nDpdyfQ6H11dfW9OawA8ZN6U75CNsvqTZWNfQhl2ps8/4uveMXFsP3q5iC9vyNmgC\\n33Cf2dy+diVqbIj0y01Jn5y6qKbI77P6O3RgLLVJ1YUN5twHqeuomej9LVujUzJ4\\nMaKBSRBlxudSMroAkho4Q3bQWhhTHsu3JLhoG5icbMg5sk+t9xBjlRkohQE6uDf5\\n0owc8vstzuq8jLgGEvyrciSnoiL5O8zbz0LgMUOCsoYU8IagKH6VeA/AeSxppoAQ\\nNKH6it6nrG/9SjrtpMEkNMmHg7zAXVTkyXWphirczQKBgQDaXClOMne/uKZODY+w\\n8msNK1WfEZTQK5o1GNU7InR7+Z5/ZeSQOI7Nk3mM1WFwUMYeLCNSN3ahFO/yzSWi\\nGhgZCUNu3/5jAhDIoHct6gmLBHuI7hKn3eQX67P9WC71RnbVe0mqN9W0CGUxV95j\\nzHpFvlUIHb3HSAE5CRxBDbKOzwKBgQDZiaBOOaALvnVgYGrKW/oP2AQI4ms3voG2\\nTdbke2eoHayf7YQznvaUe4PAho7zvuxlpSOAZCqt7tSanRjNYp33anhpbsTqVis3\\nqOSSMv4/xMeqbO47SBlCw+zQKRwnhJc0hjTDd34wLBJxpjFRe3nfr5mhIta1L7dV\\nvv48WBF2tQKBgQC6wQXmxk0aoR9DNGAHs12RdtWU5WGEJTaPYPzFxbMgcR540TmJ\\ni4W/FvlnVPwwJjU7iv5ui9ce75xE6eXc3Tps9zpAMr0MCrE2Fd+4WijtR9ksBIna\\nHnG9b66R6ADJcAmkjfwz4+sXPfLmH8OpUTHmQmHRPjaYoOHC2SLcFI35iwKBgQCa\\nj3Jaog7YyUXUaCz4Akm1oCGdvmG3hZ/by4p3ZEbN5+eS6csYckV4UhnWXMSM4oZL\\n4f1LZ9/7HMnp4NyScRMTi45qOs2mQfsK3PEp/xkubb3/lM3fSObJzTMg41Shr09P\\nfltW1jvONkIUhaRc5II/MCDToFE1AuYcAkvYzCn8UQKBgDBLGa4DYVTI45BQTTY6\\nE6fRBa3XUpzPfDIcFludlVxyGngwb8R6nr+NLeGtj0WuSdllMP4u5NubPKiPQOQU\\nhSvw7Chb6ZwU2feEeL5mNckmIUlb+cFQNhXCbZwCddYy4lNLH4OIjWpf5rStWe6s\\nqmOYvNWmmddIhbmVinuJFeyh\\n-----END PRIVATE KEY-----\\n\",\"clientEmail\":\"firebase-adminsdk-ofvjh@internburger-6dd37.iam.gserviceaccount.com\",\"httpClient\":{\"retry\":{\"maxRetries\":4,\"statusCodes\":[503],\"ioErrorCodes\":[\"ECONNRESET\",\"ETIMEDOUT\"],\"backOffFactor\":0.5,\"maxDelayInMillis\":60000}}},\"databaseURL\":\"https://internburger-6dd37.firebaseio.com\"}"}}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"The Cloud Firestore emulator is not running, so calls to Firestore will affect production."}}
+[debug] [2022-12-11T08:40:14.063Z] [runtime-status] [28712] Functions runtime initialized. {"cwd":"F:\\internShipProject\\demo\\functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Functions runtime initialized. {\"cwd\":\"F:\\\\internShipProject\\\\demo\\\\functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-12-11T08:40:14.064Z] [runtime-status] [28712] Listening to port: \\?\pipe\fire_emu_ed4ce5f9a6977625 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [28712] Listening to port: \\\\?\\pipe\\fire_emu_ed4ce5f9a6977625"}}
+[debug] [2022-12-11T08:40:14.092Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:40:14.092Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:40:14.092Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:40:14.106Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:40:14.106Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 6.4787ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 6.4787ms"}}
+[debug] [2022-12-11T08:40:20.030Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:40:20.030Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:40:20.030Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:40:20.034Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:40:20.034Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:40:20.034Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:40:20.034Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:40:24.492Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:40:24.492Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 4456.1392ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 4456.1392ms"}}
+[debug] [2022-12-11T08:41:47.612Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:41:47.613Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:41:47.613Z] Accepted request GET /internburger-6dd37/us-central1/app/users/ --> us-central1-app
+[debug] [2022-12-11T08:41:47.616Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:41:47.616Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/, mapping to path=/users/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/, mapping to path=/users/"}}
+[debug] [2022-12-11T08:41:47.617Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:41:47.617Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:41:48.771Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:41:48.771Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 1133.2671ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 1133.2671ms"}}
+[debug] [2022-12-11T08:42:01.726Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:42:01.726Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:42:01.726Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:42:01.728Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:42:01.728Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:42:01.729Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:42:01.729Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:42:02.897Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:42:02.898Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 1166.5601ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 1166.5601ms"}}
+[debug] [2022-12-11T08:43:25.534Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:43:25.534Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:43:25.534Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:43:25.538Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:43:25.538Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:43:25.539Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:43:25.539Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:43:26.744Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:43:26.744Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 1204.801ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 1204.801ms"}}
+[debug] [2022-12-11T08:43:30.022Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:43:30.022Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:43:30.022Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:43:30.026Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:43:30.026Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:43:30.027Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:43:30.027Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:43:30.314Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:43:30.314Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 284.6095ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 284.6095ms"}}
+[debug] [2022-12-11T08:44:57.529Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:44:57.530Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:44:57.530Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:44:57.534Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:44:57.534Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:44:57.534Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:44:57.535Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:44:58.707Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:44:58.708Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 1170.8132ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 1170.8132ms"}}
+[debug] [2022-12-11T08:45:49.907Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:45:49.907Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:45:49.907Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:45:49.911Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:45:49.912Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:45:49.912Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:45:49.912Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:45:50.222Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:45:50.222Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 307.8264ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 307.8264ms"}}
+[debug] [2022-12-11T08:45:55.725Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:45:55.726Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:45:55.726Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:45:55.729Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:45:55.730Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:45:55.730Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:45:55.730Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:45:56.028Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:45:56.028Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 296.272ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 296.272ms"}}
+[debug] [2022-12-11T08:46:00.490Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:46:00.490Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:46:00.490Z] Accepted request GET /internburger-6dd37/us-central1/app/burgers --> us-central1-app
+[debug] [2022-12-11T08:46:00.495Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:46:00.495Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/burgers, mapping to path=/burgers {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/burgers, mapping to path=/burgers"}}
+[debug] [2022-12-11T08:46:00.496Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:46:00.496Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:46:01.122Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:46:01.122Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 623.4921ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 623.4921ms"}}
+[debug] [2022-12-11T08:46:05.507Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:46:05.508Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:46:05.508Z] Accepted request OPTIONS /internburger-6dd37/us-central1/app/addOrder --> us-central1-app
+[debug] [2022-12-11T08:46:05.512Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:46:05.512Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/addOrder, mapping to path=/addOrder {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/addOrder, mapping to path=/addOrder"}}
+[debug] [2022-12-11T08:46:05.512Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:46:05.512Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:46:05.515Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:46:05.515Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 1.1718ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 1.1718ms"}}
+[debug] [2022-12-11T08:46:05.518Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:46:05.518Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:46:05.518Z] Accepted request POST /internburger-6dd37/us-central1/app/addOrder --> us-central1-app
+[debug] [2022-12-11T08:46:05.520Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:46:05.520Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/addOrder, mapping to path=/addOrder {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/addOrder, mapping to path=/addOrder"}}
+[debug] [2022-12-11T08:46:05.520Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:46:05.521Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:46:05.527Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:46:05.527Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 9.6641ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 9.6641ms"}}
+[debug] [2022-12-11T08:46:38.362Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:46:38.363Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:46:38.363Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:46:38.365Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:46:38.365Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:46:38.366Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:46:38.366Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:46:38.649Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:46:38.649Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 282.2112ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 282.2112ms"}}
+[debug] [2022-12-11T08:46:51.097Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:46:51.097Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:46:51.098Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:46:51.100Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:46:51.100Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:46:51.100Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:46:51.100Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:46:51.371Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:46:51.372Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 268.8952ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 268.8952ms"}}
+[debug] [2022-12-11T08:47:15.619Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:47:15.620Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:47:15.620Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:47:15.623Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:47:15.623Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:47:15.623Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:47:15.623Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:47:15.905Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:47:15.905Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 279.6947ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 279.6947ms"}}
+[debug] [2022-12-11T08:47:31.167Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:47:31.167Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:47:31.167Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:47:31.169Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:47:31.169Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:47:31.169Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:47:31.170Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:47:31.453Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:47:31.453Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 282.3009ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 282.3009ms"}}
+[debug] [2022-12-11T08:47:34.272Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:47:34.272Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:47:34.273Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:47:34.278Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:47:34.279Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:47:34.279Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:47:34.279Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:47:34.553Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:47:34.553Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 272.4027ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 272.4027ms"}}
+[debug] [2022-12-11T08:47:44.703Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-11T08:47:44.703Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-11T08:47:44.703Z] Accepted request GET /internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com --> us-central1-app
+[debug] [2022-12-11T08:47:44.706Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-11T08:47:44.706Z] [functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/internburger-6dd37/us-central1/app/users/nguyenvom98@gmail.com, mapping to path=/users/nguyenvom98@gmail.com"}}
+[debug] [2022-12-11T08:47:44.706Z] [worker-pool] submitRequest(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-app)"}}
+[debug] [2022-12-11T08:47:44.706Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: BUSY"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-12-11T08:47:44.995Z] [worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-02017fcf-0906-4abd-bb9b-dbcac054bbad]: IDLE"}}
+[debug] [2022-12-11T08:47:44.995Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] i  functions: Finished "app" in 287.023ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in 287.023ms"}}

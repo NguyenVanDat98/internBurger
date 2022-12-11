@@ -1,5 +1,6 @@
 import { Table } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import { getDataAll } from "../apiMethod/apiMethod";
 const columns = [
   {
@@ -15,14 +16,27 @@ const columns = [
     dataIndex: "price",
   },
 ];
+
 function AdminPage(props) {
-  const {} = props;
-  const [data, setData] = useState([]);
+
+  const fetchOrder = async()=>  await getDataAll("burgers");
+  const {status,data,refetch }=useQuery(["get"],fetchOrder,{retry : 2 , retryDelay:500})
+
+
+useEffect(()=>{
+  const  changenal = new BroadcastChannel("sw-messages")
+  changenal.addEventListener("message",()=>{
+    console.log('cax');
+    refetch()
+  })
+},[])
+  const [dataa, setData] = useState([]);
 
   useEffect(() => {
-    const getDataOrder = async () => {
-      const rest = await getDataAll("burgers");
-      const changeData = rest.map((e, i) => {
+   if(!data){
+    return
+   }
+      const changeData = data.map((e, i) => {
         const ingredients = `salad (${e?.salad}), cheese (${e?.cheese}), meat (${e?.meat}) , bacon (${e?.bacon})`;
         const price =
           (parseInt(e?.salad) +
@@ -38,9 +52,8 @@ function AdminPage(props) {
         };
       });
       setData(changeData);
-    };
-    getDataOrder();
-  }, []);
+
+  }, [data]);
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [loading, setLoading] = useState(false);
   const start = () => {
@@ -75,7 +88,7 @@ function AdminPage(props) {
           {hasSelected ? `Selected ${selectedRowKeys.length} items` : ""}
         </span>
       </div>
-      <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+      <Table rowSelection={rowSelection} pagination={{ defaultPageSize: 10, showSizeChanger: true, pageSizeOptions: ['10', '20', '30']}} size={"small"} columns={columns} dataSource={dataa} />
     </div>
   );
 }

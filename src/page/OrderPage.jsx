@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addOrder } from "../apiMethod/apiMethod";
+// import { subscribeUser } from "../subscription";
 
 function OrderPage(props) {
   const navi = useNavigate();
@@ -35,7 +36,8 @@ function OrderPage(props) {
     _.then((__) => {
       if (__.status === 200) {
         alert("Order success");
-        navi("/");
+        // subscribeUser()
+        navi("/internBurger/");
       }
     });
   };

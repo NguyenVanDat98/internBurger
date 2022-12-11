@@ -31,20 +31,10 @@ function BuildBurger(props) {
     }
   };
 
-  // const [user,SetUser] = useState(null)
-  // const userCollectionRef = collection(db,"users")
-  //   useEffect(()=>{
-  //     const getUsers = async ()=>{
-  //       const data = await getDocs(userCollectionRef)
-  //       console.log(data)
-  //     }
-
-  //     getUsers()
-  //   },[])
 
   return (
-    <Row>
-      <Col span={10} offset={2}>
+    <Row style={{marginTop: "20px"}}>
+      <Col span={10} xs={{span:18 ,offset:3,order : 1}} md={{span:10 , offset:2}} >
         <div className="bor-m10">
           <h3 className="price">
             Price : <span>$ {price()} </span>{" "}
@@ -56,7 +46,7 @@ function BuildBurger(props) {
           <Option keyy="meat"> meat</Option>
         </div>
       </Col>
-      <Col span={10}>
+      <Col span={10} xs={{span:18 ,offset:3 ,order :  0}} md={{span:8 }}>
         <PreviewProduct />
         <div className="changeQuantity">
           <Button onClick={() => handleChangequantity(0)}> - </Button>
@@ -72,7 +62,7 @@ function BuildBurger(props) {
             shape="round"
             onClick={() =>
               navi({
-                pathname: auth ? "/order" : "/login",
+                pathname: auth ? "/internBurger/order" : "/internBurger/login",
                 hash: auth ? "" : "ok",
               })
             }
